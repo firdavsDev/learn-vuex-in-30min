@@ -1,0 +1,10 @@
+YT video: https://youtu.be/nFh7-HfODYY
+
+1)Create a new project via vue-cli:
+vue create project-name
+
+2)Install the following dependencies:
+Install axios: npm install axios
+Install vue-router: npm install vue-router
+Install vuex: npm install vuex
+
