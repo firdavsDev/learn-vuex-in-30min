@@ -6,12 +6,12 @@ export default createStore({
     // state is a single source of truth
     // as data()  in component
     // state is reactive
-    // we can set state in component by using this.$store.state
+    // we can get state in component by using $store.state
     counter: 0
   },
   getters: {
     // getters is a function that get state
-    // we can set state in component by using this.$store.getters.getterName
+    // we can get state in component by using $store.getters.getterName
     // getters can be used for computed properties
     // getters can be used for filter
     // getters can be used for mapGetters
@@ -22,7 +22,7 @@ export default createStore({
   },
   mutations: {
     // mutations is a function that change state
-    // we can set state in component by using this.$store.commit('mutationName')
+    // we can set state in component by using $store.commit('mutationName')
     // mutations must be synchronous. If you want to do asynchronous, use actions
 
     increment(state, randomNumber) {
@@ -34,7 +34,7 @@ export default createStore({
   },
   actions: {
     // actions is a function that commit mutations
-    // we can set state in component by using this.$store.dispatch('actionName')
+    // we can set state in component by using $store.dispatch('actionName')
     // actions can be asynchronous. If you want to do synchronous, use mutations
     // actions can commit mutations
 
@@ -55,11 +55,29 @@ export default createStore({
   },
   modules: {
     // modules is a function that split store into multiple modules
-    // we can set state in component by using this.$store.state.moduleName.stateName
-    // we can set state in component by using this.$store.getters['moduleName/getterName']
-    // we can set state in component by using this.$store.commit('moduleName/mutationName')
-    // we can set state in component by using this.$store.dispatch('moduleName/actionName')
+    // we can set state in component by using $store.state.moduleName.stateName
+    // we can set state in component by using $store.getters['moduleName/getterName']
+    // we can set state in component by using $store.commit('moduleName/mutationName')
+    // we can set state in component by using $store.dispatch('moduleName/actionName')
 
     // modules can be nested modules
   }
 })
+
+
+
+/*
+
+What is the difference between Vuex actions and mutations? in vuejs: 
+
+In Vue.js, Vuex is a state management library that provides a centralized store for managing the state of an application. Actions and mutations are two important concepts in Vuex.
+
+Mutations are functions that are responsible for changing the state in the store. They are synchronous and can only modify the state, not read it. Mutations are typically called from actions.
+
+Actions are functions that can perform asynchronous operations and then commit mutations to change the state in the store. They can also dispatch other actions. Actions are typically called from components.
+
+The main difference between actions and mutations is that mutations are synchronous and can only modify the state, while actions can be asynchronous and can perform any operation before committing mutations.
+
+In summary, mutations are used to modify the state in the store, while actions are used to perform asynchronous operations and then commit mutations to change the state.
+  
+*/
